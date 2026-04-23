@@ -10,6 +10,15 @@
 
 第一阶段不做完整 SaaS，不卖账号，不做海外模型访问转售，不承诺全自动改业务代码。先用可交付服务验证需求，再逐步沉淀自动化工具。
 
+## 先看这里
+
+如果你第一次打开这个仓库，建议先看这 4 份材料：
+
+1. [服务介绍](service_kit/one_page_service.md)
+2. [套餐与定价](service_kit/service_packages.md)
+3. [客户 FAQ](service_kit/client_faq.md)
+4. [完整 demo 闭环](service_kit/full_demo_case_walkthrough.md)
+
 ## 服务包
 
 ### 1. 仓库体检
@@ -101,6 +110,13 @@ AI 只做辅助分析，不直接替代人工交付。
 - [AI 输出复核清单](service_kit/ai_output_review_checklist.md)
 - [客户交付格式](service_kit/client_delivery_format.md)
 
+## 销售与对外页面
+
+- [服务主页文案](service_kit/service_landing_page.md)
+- [套餐与定价](service_kit/service_packages.md)
+- [客户 FAQ](service_kit/client_faq.md)
+- [GitHub 仓库首页优化建议](service_kit/github_repo_homepage_guide.md)
+
 ## GitHub 仓库建议结构
 
 ```text
@@ -112,7 +128,8 @@ AI 只做辅助分析，不直接替代人工交付。
 ├── docs/
 ├── workflow_templates/
 ├── README.md
-└── day*.md
+├── service_kit/
+└── workflow_templates/
 ```
 
 ## 本地 Git 初始化
