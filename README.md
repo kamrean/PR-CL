@@ -2,8 +2,15 @@
 
 面向学生项目、独立开发者、小外包团队和小 SaaS 团队的轻量工程化服务工具包。
 
-这不是一个卖账号的项目，也不是一个一上来就承诺“全自动修一切”的平台。
-这套仓库卖的是可交付结果：
+这套仓库解决的是：
+
+- 仓库接手困难
+- CI 经常红灯但没人愿意看长日志
+- PR 改动不大但 reviewer 很难快速判断风险
+- GitHub Actions 没配好，问题总是很晚才暴露
+
+我们卖的不是账号，也不是“全自动修一切”的承诺。
+我们卖的是可交付结果：
 
 1. 仓库体检
 2. CI 红灯诊断
@@ -11,15 +18,27 @@
 4. GitHub Actions 基础落地
 5. 后续试点、转付费与月度托管流程
 
-如果你现在最头疼的是这些问题：
+## 当前默认支持范围
 
-- 仓库接手困难，新人不知道怎么跑起来
-- CI 经常红灯，但没人愿意看长日志
-- PR 改动不大，但 reviewer 很难快速判断风险
-- GitHub Actions 没配好，问题总是很晚才暴露
-- 想做工程化，但不知道第一步先补什么
+这套 MVP 当前主支持：
 
-这套仓库就是围绕这些问题搭的。
+- GitHub
+- GitHub Actions
+- Node 项目
+- Python 项目
+
+以下内容默认按单评估，不作为标准承诺：
+
+- GitLab CI
+- Jenkins
+- CircleCI
+- Vercel / Netlify / Cloudflare Pages 的平台级问题
+- 多语言 monorepo
+- 生产部署
+
+详细范围见：
+
+- [服务范围矩阵](service_kit/service_scope_matrix.md)
 
 ## 先看这里
 
@@ -34,24 +53,33 @@
 7. [上线前总检查](service_kit/release_readiness_checklist.md)
 8. [首单执行清单](service_kit/first_order_execution_checklist.md)
 
-## 适合谁
-
-最适合以下几类客户：
-
-1. 学生项目组
-2. 独立开发者
-3. 小型外包团队
-4. 小 SaaS 团队
-5. 旧仓库维护者
-
 ## 如何开始合作
 
 最简单的开始方式只有两种：
 
 1. 发一个仓库链接，先做仓库体检
-2. 发一段脱敏后的 CI 日志，先做单次诊断
+2. 发一段脱敏后的 GitHub Actions 错误摘要，先做单次诊断
 
 第一次合作默认建议先从低风险入口包开始，不直接做大而全的自动化或托管。
+
+## 私有资料与敏感信息
+
+公开仓库不是客户私有资料的默认入口。
+
+如果涉及以下内容，请先转私下渠道：
+
+- 私有仓库
+- 私有 PR
+- 原始 CI 日志
+- 截图
+- workflow 文件
+- 任何未确认完成脱敏的材料
+
+对应材料：
+
+- [私有资料接单政策](service_kit/private_intake_policy.md)
+- [客户信息收集表](service_kit/customer_intake.md)
+- [私有仓库访问授权模板](service_kit/private_repo_access_authorization.md)
 
 ## 服务包
 
@@ -86,7 +114,7 @@
 
 对应材料：
 
-- [CI 红灯诊断清单](service_kit/ci_red_checklist.md)
+- [CI 红灯诊断检查清单](service_kit/ci_red_checklist.md)
 - [CI 红灯诊断报告模板](service_kit/ci_red_report_template.md)
 - [CI 日志提取规则](service_kit/ci_log_extraction_rules.md)
 - [CI 红灯风险矩阵](service_kit/ci_red_risk_matrix.md)
@@ -109,7 +137,7 @@
 - [PR 初审报告模板](service_kit/pr_review_report_template.md)
 - [PR 初审风险矩阵](service_kit/pr_review_risk_matrix.md)
 
-### 4. PR/CI 自动化落地包
+### 4. GitHub Actions 基础落地
 
 当前包含：
 
@@ -122,9 +150,17 @@
 对应材料：
 
 - [workflow_templates](workflow_templates)
-- [GitHub Actions 最小 CI 说明](service_kit/github_actions_minimal_ci.md)
-- [客户落地说明](service_kit/customer_workflow_install_guide.md)
-- [workflow 调试清单](service_kit/workflow_debug_checklist.md)
+- [客户 GitHub Actions 落地说明](service_kit/customer_workflow_install_guide.md)
+- [GitHub Actions 安全基线](service_kit/github_actions_security_baseline.md)
+- [Artifact 白名单与脱敏政策](service_kit/artifact_allowlist_and_redaction_policy.md)
+
+## 最小执行层
+
+这套仓库不再只是文档，也补了两份最小可执行脚本，用来生成标准化报告骨架：
+
+- [automation/README.md](automation/README.md)
+- [CI 红灯报告骨架脚本](automation/ci_red_triage/new-ci-red-report.ps1)
+- [PR 初审报告骨架脚本](automation/pr_review/new-pr-review-report.ps1)
 
 ## AI 使用边界
 
@@ -142,110 +178,38 @@ AI 只做辅助分析，不直接替代人工交付。
 
 - [AI 分析提示词](service_kit/ai_analysis_prompt.md)
 - [AI 分析 SOP](service_kit/ai_analysis_sop.md)
+- [AI 数据处理与客户同意](service_kit/ai_data_handling_and_customer_consent.md)
 - [AI 输出复核清单](service_kit/ai_output_review_checklist.md)
-- [客户交付格式](service_kit/client_delivery_format.md)
 
 ## 交付怎么做
 
-这套仓库不是只给几句建议，而是把交付动作拆成了标准包：
+交付不是“几句建议”，而是一套标准包：
 
+- [客户交付 Playbook](docs/customer_delivery_playbook.md)
 - [交付包规范](service_kit/delivery_pack_spec.md)
-- [交付包模板](service_kit/delivery_pack_template.md)
-- [下一步建议模板](service_kit/next_steps_template.md)
-- [风险确认模板](service_kit/risk_confirmation_template.md)
+- [修复与验证闭环手册](service_kit/fix_and_verify_playbook.md)
+- [交付前安全硬检查](service_kit/preflight_security_checklist.md)
 - [交付移交模板](service_kit/delivery_handoff_template.md)
 
-## 销售与对外页面
+## 获客、试点与案例
 
 - [服务主页文案](service_kit/service_landing_page.md)
 - [服务套餐与定价](service_kit/service_packages.md)
-- [客户 FAQ](service_kit/client_faq.md)
-- [GitHub 仓库首页优化建议](service_kit/github_repo_homepage_guide.md)
-- [GitHub 仓库首页最终文案](service_kit/github_homepage_final_copy.md)
-
-## 获客与试点
-
 - [首批客户私信模板](service_kit/outreach_message_templates.md)
-- [试点邀约文案](service_kit/pilot_offer_templates.md)
-- [客户筛选评分](service_kit/lead_scoring.md)
-- [首次沟通话术](service_kit/discovery_call_script.md)
-- [前 50 个潜在客户计划](service_kit/first_50_leads_plan.md)
-- [客户触达记录表](service_kit/lead_tracker_template.md)
-- [试点反馈表](service_kit/pilot_feedback_form.md)
-- [案例授权模板](service_kit/case_permission_template.md)
-- [线索跟进 SOP](service_kit/followup_sop.md)
-- [客户状态定义](service_kit/client_status_definitions.md)
-
-## 试点执行与转付费
-
 - [试点执行包](service_kit/pilot_execution_pack.md)
-- [交付前检查表](service_kit/pre_delivery_checklist.md)
-- [试点验收标准](service_kit/pilot_acceptance_criteria.md)
 - [试点转付费 SOP](service_kit/pilot_to_paid_conversion_sop.md)
-- [首单执行清单](service_kit/first_order_execution_checklist.md)
-- [实际报价话术](service_kit/pricing_conversation_script.md)
-
-## 案例展示
-
+- [试点运营指标看板](service_kit/ops_metrics_dashboard.md)
 - [案例展示页](service_kit/case_showcase_page.md)
-- [销售用案例摘要模板](service_kit/case_summary_template.md)
-- [Before / After 模板](service_kit/before_after_template.md)
-- [结果展示 SOP](service_kit/result_showcase_sop.md)
-- [案例展示素材检查表](service_kit/showcase_assets_checklist.md)
-
-## 收口与上线
-
-- [上线前总检查](service_kit/release_readiness_checklist.md)
-- [仓库最终导航图](service_kit/final_repository_map.md)
-- [15 天成果总览](service_kit/fifteen_day_summary.md)
-- [推送前检查清单](service_kit/pre_push_checklist.md)
-
-## Demo 与样板
-
-- [样板仓库计划](service_kit/demo_repo_plan.md)
-- [样板仓库评分表](service_kit/demo_repo_scorecard.md)
-- [案例追踪表](service_kit/demo_case_tracker.md)
-- [旧仓库体检 demo](service_kit/demo_legacy_repo_audit.md)
-- [前端 CI 红灯 demo](service_kit/demo_frontend_ci_red_report.md)
-- [PR 初审 demo](service_kit/demo_pr_review_report.md)
-- [交付包 demo](service_kit/demo_delivery_pack.md)
-- [完整 demo 闭环](service_kit/full_demo_case_walkthrough.md)
 
 ## 仓库结构
 
 ```text
 .
 ├── .github/
+├── automation/
 ├── docs/
 ├── repo_scaffold/
 ├── service_kit/
 ├── workflow_templates/
 └── README.md
 ```
-
-## 本地 Git 与 GitHub
-
-如果 PowerShell 找不到 `git`，可以先确认：
-
-```powershell
-& "C:\Program Files\Git\cmd\git.exe" --version
-```
-
-初始化本地仓库：
-
-```powershell
-cd D:\赛道研究\pr-ci-mvp
-& "C:\Program Files\Git\cmd\git.exe" init
-& "C:\Program Files\Git\cmd\git.exe" add .
-& "C:\Program Files\Git\cmd\git.exe" commit -m "Initial PR CI MVP service kit"
-```
-
-推送到 GitHub：
-
-```powershell
-& "C:\Program Files\Git\cmd\git.exe" branch -M main
-& "C:\Program Files\Git\cmd\git.exe" remote add origin https://github.com/YOUR_NAME/YOUR_REPO.git
-& "C:\Program Files\Git\cmd\git.exe" push -u origin main
-```
-
-建议把 `C:\Program Files\Git\cmd` 加入 Windows PATH，这样后续可以直接使用 `git`。

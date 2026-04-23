@@ -26,14 +26,21 @@ jobs:
           test -f service_kit/ci_red_report_template.md
           test -f service_kit/customer_workflow_install_guide.md
           test -f service_kit/ai_analysis_prompt.md
+          test -f service_kit/private_intake_policy.md
+          test -f service_kit/private_repo_access_authorization.md
+          test -f service_kit/github_actions_security_baseline.md
+          test -f service_kit/artifact_allowlist_and_redaction_policy.md
+          test -f service_kit/preflight_security_checklist.md
           test -f workflow_templates/node-minimal-ci.yml
           test -f workflow_templates/python-minimal-ci.yml
+          test -f automation/ci_red_triage/new-ci-red-report.ps1
+          test -f automation/pr_review/new-pr-review-report.ps1
 
       - name: Check for obvious secret file names
         shell: bash
         run: |
           set -euo pipefail
-          if find . -type f \( -name ".env" -o -name "*.pem" -o -name "*.key" \) | grep .; then
+          if find . -type f \( -name ".env" -o -name "*.pem" -o -name "*.key" -o -name "*.p12" -o -name "*.pfx" \) | grep .; then
             echo "Potential secret files found. Remove or rename before commit."
             exit 1
           fi

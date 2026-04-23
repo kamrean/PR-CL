@@ -35,12 +35,14 @@ jobs:
       - name: Run tests
         run: pytest
 
-      - name: Upload pytest cache on failure
+      - name: Upload safe pytest cache on failure
         if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: pytest-debug-files
           path: |
             .pytest_cache
+            pytest.xml
+            junit.xml
           if-no-files-found: ignore
-          retention-days: 7
+          retention-days: 3

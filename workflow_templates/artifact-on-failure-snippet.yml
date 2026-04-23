@@ -1,17 +1,16 @@
 # Add this step near the end of a GitHub Actions job.
-# It uploads useful debug files only when the job fails.
+# Keep artifact uploads small and low risk by default.
 
-- name: Upload debug artifacts on failure
+- name: Upload safe debug artifacts on failure
   if: failure()
   uses: actions/upload-artifact@v4
   with:
     name: ci-debug-artifacts
     path: |
-      test-results
-      coverage
-      playwright-report
-      dist
-      build
-      logs
+      ~/.npm/_logs
+      .pytest_cache
+      junit.xml
+      pytest.xml
+      coverage-summary.json
     if-no-files-found: ignore
-    retention-days: 7
+    retention-days: 3

@@ -1,61 +1,53 @@
 ---
-name: CI 红灯诊断
-about: 提交一次 CI 失败诊断需求
+name: CI Red Diagnosis Request
+about: Public-safe intake for CI diagnosis requests
 title: "[CI Red] "
 labels: ci-red
 assignees: ""
 ---
 
-## 基本信息
+## Before You Submit
 
-仓库链接：
+This public form is only for sanitized summaries.
 
-PR 链接：
+Do not paste:
 
-CI 系统：
+- private repo links
+- private PR links
+- commit SHA
+- raw CI logs
+- screenshots
+- secrets or environment values
 
-失败 workflow：
+If you need real diagnosis on a private project, switch to a private channel first and use:
 
-失败 job：
+- `service_kit/private_intake_policy.md`
+- `service_kit/customer_intake.md`
 
-失败 step：
+## Public-Safe Summary
 
-失败时间：
+- CI system:
+- Main language:
+- Failure category:
+  - [ ] install
+  - [ ] lint
+  - [ ] test
+  - [ ] build
+  - [ ] permissions
+  - [ ] secrets
+  - [ ] other
 
-Commit SHA：
+## Sanitized Error Summary
 
-## 关键日志
-
-请只粘贴脱敏后的 10-30 行关键日志。
+Paste at most 3-5 lines of fully sanitized error summary here.
 
 ```text
 
 ```
 
-## 项目背景
+## Sensitive Data Confirmation
 
-语言/框架：
-
-包管理器：
-
-安装依赖命令：
-
-测试命令：
-
-lint 命令：
-
-build 命令：
-
-## 敏感信息确认
-
-- [ ] 日志已脱敏
-- [ ] 不包含 token、key、cookie、私钥
-- [ ] 不包含真实用户个人信息
-- [ ] 不包含生产数据库地址
-
-## 期望交付
-
-- [ ] 只要诊断报告
-- [ ] 需要修复建议
-- [ ] 允许创建修复 PR
-- [ ] 需要 GitHub Actions 优化建议
+- [ ] No private links are included
+- [ ] No raw logs are included
+- [ ] No token, key, cookie, or private key is included
+- [ ] No customer personal information is included

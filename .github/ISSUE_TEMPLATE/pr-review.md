@@ -1,51 +1,40 @@
 ---
-name: PR 初审
-about: 提交一个 PR 初审需求
+name: PR Review Request
+about: Public-safe intake for PR review requests
 title: "[PR Review] "
 labels: pr-review
 assignees: ""
 ---
 
-## 基本信息
+## Before You Submit
 
-仓库链接：
+Do not paste private PR links, raw diffs, raw logs, screenshots, or secrets in this public issue.
 
-PR 链接：
+If this request is for a private repository, move to a private channel first and use:
 
-PR 标题：
+- `service_kit/private_intake_policy.md`
+- `service_kit/customer_intake.md`
 
-技术栈：
+## Public-Safe Summary
 
-CI 状态：
+- Tech stack:
+- Is this for a public repository?
+  - [ ] Yes
+  - [ ] No
+- What do you want reviewed?
+  - [ ] possible bugs
+  - [ ] missing tests
+  - [ ] compatibility risk
+  - [ ] security or permission risk
+  - [ ] merge recommendation
 
-## 希望重点检查
+## Change Summary
 
-- [ ] 潜在 bug
-- [ ] 缺失测试
-- [ ] 兼容性风险
-- [ ] 安全或权限风险
-- [ ] 是否建议合并
-- [ ] reviewer 重点关注点
+Describe the PR in one short paragraph without sharing private links or raw diff content.
 
-## 关键背景
+## Sensitive Data Confirmation
 
-请说明这个 PR 为什么要改。
-
-## 测试信息
-
-已运行的测试命令：
-
-CI 链接：
-
-## 敏感信息确认
-
-- [ ] PR 内容不包含 token、key、cookie、私钥
-- [ ] 日志或截图已脱敏
-- [ ] 不包含真实用户个人信息
-
-## 期望交付
-
-- [ ] 简短 review 结论
-- [ ] 完整 PR 初审报告
-- [ ] 是否建议合并
-- [ ] 后续修复建议
+- [ ] No private links are included
+- [ ] No raw diff is included
+- [ ] No logs or screenshots with sensitive data are included
+- [ ] No token, key, cookie, or private key is included

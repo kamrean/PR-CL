@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: Private Intake Policy
+    url: https://github.com/kamrean/PR-CL/blob/main/service_kit/private_intake_policy.md
+    about: Read this first if your request involves private repositories, private logs, or sensitive material.

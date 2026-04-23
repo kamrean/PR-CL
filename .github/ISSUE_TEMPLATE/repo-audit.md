@@ -1,44 +1,43 @@
 ---
-name: 仓库体检
-about: 提交一个仓库体检需求
+name: Repo Audit Request
+about: Public-safe intake for repository audit requests
 title: "[Repo Audit] "
 labels: repo-audit
 assignees: ""
 ---
 
-## 基本信息
+## Before You Submit
 
-仓库链接：
+Do not paste private repository links, private PR links, raw CI logs, secrets, screenshots, or customer identity information in this public issue.
 
-项目语言/框架：
+If your request involves private materials, move to a private channel first and follow:
 
-默认分支：
+- `service_kit/private_intake_policy.md`
+- `service_kit/customer_intake.md`
 
-是否公开仓库：
+## Public-Safe Summary
 
-## 需要检查的内容
+- Project type:
+- Main language:
+- Is this a public repository?
+  - [ ] Yes
+  - [ ] No
+- What do you want checked?
+  - [ ] README
+  - [ ] dependency install flow
+  - [ ] test commands
+  - [ ] CI setup
+  - [ ] secrets risk
+  - [ ] PR template
+  - [ ] branch protection
 
-- [ ] README
-- [ ] 依赖安装
-- [ ] 测试命令
-- [ ] CI 配置
-- [ ] secrets 风险
-- [ ] PR 模板
-- [ ] 分支保护
+## Problem Summary
 
-## 已知问题
+Describe the problem in one short paragraph without sharing private links or sensitive logs.
 
-请描述当前最困扰你的问题。
+## Sensitive Data Confirmation
 
-## 敏感信息确认
-
-- [ ] 已确认提交内容不包含 token、key、cookie、私钥
-- [ ] 已确认日志或截图已脱敏
-- [ ] 如包含敏感内容，已说明并请求先做脱敏处理
-
-## 期望交付
-
-- [ ] 仓库体检报告
-- [ ] 修复优先级建议
-- [ ] GitHub Actions 落地建议
-- [ ] 后续托管方案
+- [ ] This issue does not include private repository links
+- [ ] This issue does not include raw CI logs
+- [ ] This issue does not include tokens, keys, cookies, or private keys
+- [ ] This issue does not include customer personal information
