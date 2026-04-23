@@ -124,6 +124,11 @@ AI 只做辅助分析，不直接替代人工交付。
 - [客户筛选评分](service_kit/lead_scoring.md)
 - [首次沟通话术](service_kit/discovery_call_script.md)
 - [前 50 个潜在客户计划](service_kit/first_50_leads_plan.md)
+- [客户触达记录表](service_kit/lead_tracker_template.md)
+- [试点反馈表](service_kit/pilot_feedback_form.md)
+- [案例授权模板](service_kit/case_permission_template.md)
+- [线索跟进 SOP](service_kit/followup_sop.md)
+- [客户状态定义](service_kit/client_status_definitions.md)
 
 ## GitHub 仓库建议结构
 
