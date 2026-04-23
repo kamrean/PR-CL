@@ -138,6 +138,14 @@ AI 只做辅助分析，不直接替代人工交付。
 - [试点转付费 SOP](service_kit/pilot_to_paid_conversion_sop.md)
 - [交付移交模板](service_kit/delivery_handoff_template.md)
 
+## 案例展示
+
+- [案例展示页](service_kit/case_showcase_page.md)
+- [销售用案例摘要模板](service_kit/case_summary_template.md)
+- [Before / After 模板](service_kit/before_after_template.md)
+- [结果展示 SOP](service_kit/result_showcase_sop.md)
+- [案例展示素材检查表](service_kit/showcase_assets_checklist.md)
+
 ## GitHub 仓库建议结构
 
 ```text
