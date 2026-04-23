@@ -1,0 +1,39 @@
+name: Docs Check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  docs-check:
+    name: Check required service-kit files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify required files exist
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f README.md
+          test -f day3_repo_audit_checklist.md
+          test -f day4_ci_red_report_template.md
+          test -f day5_customer_workflow_install_guide.md
+          test -f day6_ai_analysis_prompt.md
+          test -f workflow_templates/node-minimal-ci.yml
+          test -f workflow_templates/python-minimal-ci.yml
+
+      - name: Check for obvious secret file names
+        shell: bash
+        run: |
+          set -euo pipefail
+          if find . -type f \( -name ".env" -o -name "*.pem" -o -name "*.key" \) | grep .; then
+            echo "Potential secret files found. Remove or rename before commit."
+            exit 1
+          fi

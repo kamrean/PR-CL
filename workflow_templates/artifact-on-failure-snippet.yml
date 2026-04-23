@@ -1,0 +1,17 @@
+# Add this step near the end of a GitHub Actions job.
+# It uploads useful debug files only when the job fails.
+
+- name: Upload debug artifacts on failure
+  if: failure()
+  uses: actions/upload-artifact@v4
+  with:
+    name: ci-debug-artifacts
+    path: |
+      test-results
+      coverage
+      playwright-report
+      dist
+      build
+      logs
+    if-no-files-found: ignore
+    retention-days: 7
