@@ -130,6 +130,14 @@ AI 只做辅助分析，不直接替代人工交付。
 - [线索跟进 SOP](service_kit/followup_sop.md)
 - [客户状态定义](service_kit/client_status_definitions.md)
 
+## 试点执行与转付费
+
+- [试点执行包](service_kit/pilot_execution_pack.md)
+- [交付前检查表](service_kit/pre_delivery_checklist.md)
+- [试点验收标准](service_kit/pilot_acceptance_criteria.md)
+- [试点转付费 SOP](service_kit/pilot_to_paid_conversion_sop.md)
+- [交付移交模板](service_kit/delivery_handoff_template.md)
+
 ## GitHub 仓库建议结构
 
 ```text
