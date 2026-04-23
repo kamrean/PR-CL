@@ -161,6 +161,9 @@
 - [automation/README.md](automation/README.md)
 - [CI 红灯报告骨架脚本](automation/ci_red_triage/new-ci-red-report.ps1)
 - [PR 初审报告骨架脚本](automation/pr_review/new-pr-review-report.ps1)
+- [能力升级路线](service_kit/upgrade_roadmap.md)
+- [GitHub Actions 升级矩阵](service_kit/github_actions_upgrade_matrix.md)
+- [标准输出样例说明](service_kit/sample_output_guide.md)
 
 ## AI 使用边界
 
