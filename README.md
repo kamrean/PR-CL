@@ -117,6 +117,14 @@ AI 只做辅助分析，不直接替代人工交付。
 - [客户 FAQ](service_kit/client_faq.md)
 - [GitHub 仓库首页优化建议](service_kit/github_repo_homepage_guide.md)
 
+## 获客与试点
+
+- [首批客户私信模板](service_kit/outreach_message_templates.md)
+- [试点邀约文案](service_kit/pilot_offer_templates.md)
+- [客户筛选评分](service_kit/lead_scoring.md)
+- [首次沟通话术](service_kit/discovery_call_script.md)
+- [前 50 个潜在客户计划](service_kit/first_50_leads_plan.md)
+
 ## GitHub 仓库建议结构
 
 ```text
