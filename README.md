@@ -1,29 +1,63 @@
 # PR/CI Red Light Clinic
 
-面向小团队、学生项目、独立开发者和旧仓库维护者的轻量工程化服务包。
+面向学生项目、独立开发者、小外包团队和小 SaaS 团队的轻量工程化服务工具包。
 
-最终目标：
+这不是一个卖账号的项目，也不是一个一上来就承诺“全自动修一切”的平台。
+这套仓库卖的是可交付结果：
 
 1. 仓库体检
 2. CI 红灯诊断
-3. PR/CI 自动化落地包
+3. PR 初审
+4. GitHub Actions 基础落地
+5. 后续试点、转付费与月度托管流程
 
-第一阶段不做完整 SaaS，不卖账号，不做海外模型访问转售，不承诺全自动改业务代码。先用可交付服务验证需求，再逐步沉淀自动化工具。
+如果你现在最头疼的是这些问题：
+
+- 仓库接手困难，新人不知道怎么跑起来
+- CI 经常红灯，但没人愿意看长日志
+- PR 改动不大，但 reviewer 很难快速判断风险
+- GitHub Actions 没配好，问题总是很晚才暴露
+- 想做工程化，但不知道第一步先补什么
+
+这套仓库就是围绕这些问题搭的。
 
 ## 先看这里
 
-如果你第一次打开这个仓库，建议先看这 4 份材料：
+第一次打开这个仓库，建议先看这 8 份材料：
 
 1. [服务介绍](service_kit/one_page_service.md)
-2. [套餐与定价](service_kit/service_packages.md)
-3. [客户 FAQ](service_kit/client_faq.md)
-4. [完整 demo 闭环](service_kit/full_demo_case_walkthrough.md)
+2. [服务边界](service_kit/service_boundary.md)
+3. [服务套餐与定价](service_kit/service_packages.md)
+4. [客户 FAQ](service_kit/client_faq.md)
+5. [完整 demo 闭环](service_kit/full_demo_case_walkthrough.md)
+6. [15 天成果总览](service_kit/fifteen_day_summary.md)
+7. [上线前总检查](service_kit/release_readiness_checklist.md)
+8. [首单执行清单](service_kit/first_order_execution_checklist.md)
+
+## 适合谁
+
+最适合以下几类客户：
+
+1. 学生项目组
+2. 独立开发者
+3. 小型外包团队
+4. 小 SaaS 团队
+5. 旧仓库维护者
+
+## 如何开始合作
+
+最简单的开始方式只有两种：
+
+1. 发一个仓库链接，先做仓库体检
+2. 发一段脱敏后的 CI 日志，先做单次诊断
+
+第一次合作默认建议先从低风险入口包开始，不直接做大而全的自动化或托管。
 
 ## 服务包
 
 ### 1. 仓库体检
 
-检查固定项：
+固定检查项：
 
 - README
 - 依赖安装
@@ -33,7 +67,7 @@
 - PR 模板
 - 分支保护
 
-对应文件：
+对应材料：
 
 - [仓库体检检查清单](service_kit/repo_audit_checklist.md)
 - [仓库体检报告模板](service_kit/repo_audit_report_template.md)
@@ -50,31 +84,14 @@
 - 验证命令
 - 风险等级
 
-对应文件：
+对应材料：
 
 - [CI 红灯诊断清单](service_kit/ci_red_checklist.md)
 - [CI 红灯诊断报告模板](service_kit/ci_red_report_template.md)
 - [CI 日志提取规则](service_kit/ci_log_extraction_rules.md)
 - [CI 红灯风险矩阵](service_kit/ci_red_risk_matrix.md)
 
-### 3. PR/CI 自动化落地包
-
-当前包含：
-
-- Node 最小 CI workflow
-- Python 最小 CI workflow
-- artifact 上传片段
-- GitHub Actions 落地说明
-- workflow 调试清单
-
-对应目录：
-
-- [workflow_templates](workflow_templates)
-- [GitHub Actions 最小 CI 说明](service_kit/github_actions_minimal_ci.md)
-- [客户落地说明](service_kit/customer_workflow_install_guide.md)
-- [workflow 调试清单](service_kit/workflow_debug_checklist.md)
-
-### 4. PR 初审
+### 3. PR 初审
 
 固定输出：
 
@@ -83,14 +100,31 @@
 - 缺失测试
 - 兼容性风险
 - 安全或权限风险
-- 建议 reviewer 重点看的地方
+- reviewer 重点关注项
 - 是否建议合并
 
-对应文件：
+对应材料：
 
 - [PR 初审检查清单](service_kit/pr_review_checklist.md)
 - [PR 初审报告模板](service_kit/pr_review_report_template.md)
 - [PR 初审风险矩阵](service_kit/pr_review_risk_matrix.md)
+
+### 4. PR/CI 自动化落地包
+
+当前包含：
+
+- Node 最小 CI workflow
+- Python 最小 CI workflow
+- 失败时 artifact 上传片段
+- GitHub Actions 落地说明
+- workflow 调试清单
+
+对应材料：
+
+- [workflow_templates](workflow_templates)
+- [GitHub Actions 最小 CI 说明](service_kit/github_actions_minimal_ci.md)
+- [客户落地说明](service_kit/customer_workflow_install_guide.md)
+- [workflow 调试清单](service_kit/workflow_debug_checklist.md)
 
 ## AI 使用边界
 
@@ -101,21 +135,33 @@ AI 只做辅助分析，不直接替代人工交付。
 - CI 根因判断
 - 修复建议
 - PR review 建议
-- secrets / token / 用户信息
+- secrets、token、用户信息
 - 登录、支付、权限、数据库、生产部署等高风险内容
 
-对应文件：
+对应材料：
 
 - [AI 分析提示词](service_kit/ai_analysis_prompt.md)
+- [AI 分析 SOP](service_kit/ai_analysis_sop.md)
 - [AI 输出复核清单](service_kit/ai_output_review_checklist.md)
 - [客户交付格式](service_kit/client_delivery_format.md)
+
+## 交付怎么做
+
+这套仓库不是只给几句建议，而是把交付动作拆成了标准包：
+
+- [交付包规范](service_kit/delivery_pack_spec.md)
+- [交付包模板](service_kit/delivery_pack_template.md)
+- [下一步建议模板](service_kit/next_steps_template.md)
+- [风险确认模板](service_kit/risk_confirmation_template.md)
+- [交付移交模板](service_kit/delivery_handoff_template.md)
 
 ## 销售与对外页面
 
 - [服务主页文案](service_kit/service_landing_page.md)
-- [套餐与定价](service_kit/service_packages.md)
+- [服务套餐与定价](service_kit/service_packages.md)
 - [客户 FAQ](service_kit/client_faq.md)
 - [GitHub 仓库首页优化建议](service_kit/github_repo_homepage_guide.md)
+- [GitHub 仓库首页最终文案](service_kit/github_homepage_final_copy.md)
 
 ## 获客与试点
 
@@ -136,7 +182,8 @@ AI 只做辅助分析，不直接替代人工交付。
 - [交付前检查表](service_kit/pre_delivery_checklist.md)
 - [试点验收标准](service_kit/pilot_acceptance_criteria.md)
 - [试点转付费 SOP](service_kit/pilot_to_paid_conversion_sop.md)
-- [交付移交模板](service_kit/delivery_handoff_template.md)
+- [首单执行清单](service_kit/first_order_execution_checklist.md)
+- [实际报价话术](service_kit/pricing_conversation_script.md)
 
 ## 案例展示
 
@@ -148,35 +195,43 @@ AI 只做辅助分析，不直接替代人工交付。
 
 ## 收口与上线
 
-- [上线前总检查清单](service_kit/release_readiness_checklist.md)
+- [上线前总检查](service_kit/release_readiness_checklist.md)
 - [仓库最终导航图](service_kit/final_repository_map.md)
-- [十五天成果总览](service_kit/fifteen_day_summary.md)
+- [15 天成果总览](service_kit/fifteen_day_summary.md)
 - [推送前检查清单](service_kit/pre_push_checklist.md)
 
-## GitHub 仓库建议结构
+## Demo 与样板
+
+- [样板仓库计划](service_kit/demo_repo_plan.md)
+- [样板仓库评分表](service_kit/demo_repo_scorecard.md)
+- [案例追踪表](service_kit/demo_case_tracker.md)
+- [旧仓库体检 demo](service_kit/demo_legacy_repo_audit.md)
+- [前端 CI 红灯 demo](service_kit/demo_frontend_ci_red_report.md)
+- [PR 初审 demo](service_kit/demo_pr_review_report.md)
+- [交付包 demo](service_kit/demo_delivery_pack.md)
+- [完整 demo 闭环](service_kit/full_demo_case_walkthrough.md)
+
+## 仓库结构
 
 ```text
 .
 ├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   ├── workflows/
-│   └── pull_request_template.md
 ├── docs/
-├── workflow_templates/
-├── README.md
+├── repo_scaffold/
 ├── service_kit/
-└── workflow_templates/
+├── workflow_templates/
+└── README.md
 ```
 
-## 本地 Git 初始化
+## 本地 Git 与 GitHub
 
-如果 PowerShell 找不到 `git`，可以先用完整路径：
+如果 PowerShell 找不到 `git`，可以先确认：
 
 ```powershell
 & "C:\Program Files\Git\cmd\git.exe" --version
 ```
 
-初始化仓库：
+初始化本地仓库：
 
 ```powershell
 cd D:\赛道研究\pr-ci-mvp
@@ -185,7 +240,7 @@ cd D:\赛道研究\pr-ci-mvp
 & "C:\Program Files\Git\cmd\git.exe" commit -m "Initial PR CI MVP service kit"
 ```
 
-推送 GitHub：
+推送到 GitHub：
 
 ```powershell
 & "C:\Program Files\Git\cmd\git.exe" branch -M main
@@ -193,9 +248,4 @@ cd D:\赛道研究\pr-ci-mvp
 & "C:\Program Files\Git\cmd\git.exe" push -u origin main
 ```
 
-建议后续把 `C:\Program Files\Git\cmd` 加入 Windows PATH，这样就可以直接使用 `git`。
-## 棣栧崟鍚姩
-
-- [棣栧崟鎵ц娓呭崟](service_kit/first_order_execution_checklist.md)
-- [瀹為檯鎶ヤ环璇濇湳](service_kit/pricing_conversation_script.md)
-- [GitHub 浠撳簱棣栭〉鏈€缁堟枃妗](service_kit/github_homepage_final_copy.md)
+建议把 `C:\Program Files\Git\cmd` 加入 Windows PATH，这样后续可以直接使用 `git`。
