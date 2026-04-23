@@ -146,6 +146,13 @@ AI 只做辅助分析，不直接替代人工交付。
 - [结果展示 SOP](service_kit/result_showcase_sop.md)
 - [案例展示素材检查表](service_kit/showcase_assets_checklist.md)
 
+## 收口与上线
+
+- [上线前总检查清单](service_kit/release_readiness_checklist.md)
+- [仓库最终导航图](service_kit/final_repository_map.md)
+- [十五天成果总览](service_kit/fifteen_day_summary.md)
+- [推送前检查清单](service_kit/pre_push_checklist.md)
+
 ## GitHub 仓库建议结构
 
 ```text
