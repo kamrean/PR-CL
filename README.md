@@ -65,6 +65,24 @@
 - [客户落地说明](day5_customer_workflow_install_guide.md)
 - [workflow 调试清单](day5_workflow_debug_checklist.md)
 
+### 4. PR 初审
+
+固定输出：
+
+- 本次改动摘要
+- 潜在 bug
+- 缺失测试
+- 兼容性风险
+- 安全或权限风险
+- 建议 reviewer 重点看的地方
+- 是否建议合并
+
+对应文件：
+
+- [PR 初审检查清单](day7_pr_review_checklist.md)
+- [PR 初审报告模板](day7_pr_review_report_template.md)
+- [PR 初审风险矩阵](day7_pr_review_risk_matrix.md)
+
 ## AI 使用边界
 
 AI 只做辅助分析，不直接替代人工交付。
