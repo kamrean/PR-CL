@@ -49,9 +49,9 @@
 
 请粘贴对应服务的正式报告：
 
-- 仓库体检：使用 `day3_repo_audit_report_template.md`
-- CI 红灯诊断：使用 `day4_ci_red_report_template.md`
-- PR 初审：使用 `day7_pr_review_report_template.md`
+- 仓库体检：使用 `repo_audit_report_template.md`
+- CI 红灯诊断：使用 `ci_red_report_template.md`
+- PR 初审：使用 `pr_review_report_template.md`
 
 ## 02-next-steps.md
 

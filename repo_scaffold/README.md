@@ -51,3 +51,17 @@ git push -u origin main
 - 生产部署
 - 账号转售
 - 未脱敏敏感日志处理
+
+## 参考主仓库材料
+
+当前主仓库的标准材料统一放在：
+
+```text
+../service_kit/
+```
+
+其中 AI 分析 SOP 参考：
+
+```text
+../service_kit/ai_analysis_sop.md
+```

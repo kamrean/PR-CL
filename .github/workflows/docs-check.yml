@@ -22,10 +22,10 @@ jobs:
         run: |
           set -euo pipefail
           test -f README.md
-          test -f day3_repo_audit_checklist.md
-          test -f day4_ci_red_report_template.md
-          test -f day5_customer_workflow_install_guide.md
-          test -f day6_ai_analysis_prompt.md
+          test -f service_kit/repo_audit_checklist.md
+          test -f service_kit/ci_red_report_template.md
+          test -f service_kit/customer_workflow_install_guide.md
+          test -f service_kit/ai_analysis_prompt.md
           test -f workflow_templates/node-minimal-ci.yml
           test -f workflow_templates/python-minimal-ci.yml
 

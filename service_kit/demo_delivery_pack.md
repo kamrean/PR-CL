@@ -44,8 +44,8 @@
 
 详细报告请参考：
 
-- `day4_demo_frontend_ci_red_report.md`
-- `day7_demo_pr_review_report.md`
+- `demo_frontend_ci_red_report.md`
+- `demo_pr_review_report.md`
 
 ## 02-next-steps.md
 

@@ -26,9 +26,9 @@
 
 对应文件：
 
-- [仓库体检检查清单](day3_repo_audit_checklist.md)
-- [仓库体检报告模板](day3_repo_audit_report_template.md)
-- [风险分级标准](day3_risk_level_standard.md)
+- [仓库体检检查清单](service_kit/repo_audit_checklist.md)
+- [仓库体检报告模板](service_kit/repo_audit_report_template.md)
+- [风险分级标准](service_kit/risk_level_standard.md)
 
 ### 2. CI 红灯诊断
 
@@ -43,10 +43,10 @@
 
 对应文件：
 
-- [CI 红灯诊断清单](day4_ci_red_checklist.md)
-- [CI 红灯诊断报告模板](day4_ci_red_report_template.md)
-- [CI 日志提取规则](day4_ci_log_extraction_rules.md)
-- [CI 红灯风险矩阵](day4_ci_red_risk_matrix.md)
+- [CI 红灯诊断清单](service_kit/ci_red_checklist.md)
+- [CI 红灯诊断报告模板](service_kit/ci_red_report_template.md)
+- [CI 日志提取规则](service_kit/ci_log_extraction_rules.md)
+- [CI 红灯风险矩阵](service_kit/ci_red_risk_matrix.md)
 
 ### 3. PR/CI 自动化落地包
 
@@ -61,9 +61,9 @@
 对应目录：
 
 - [workflow_templates](workflow_templates)
-- [GitHub Actions 最小 CI 说明](day5_github_actions_minimal_ci.md)
-- [客户落地说明](day5_customer_workflow_install_guide.md)
-- [workflow 调试清单](day5_workflow_debug_checklist.md)
+- [GitHub Actions 最小 CI 说明](service_kit/github_actions_minimal_ci.md)
+- [客户落地说明](service_kit/customer_workflow_install_guide.md)
+- [workflow 调试清单](service_kit/workflow_debug_checklist.md)
 
 ### 4. PR 初审
 
@@ -79,9 +79,9 @@
 
 对应文件：
 
-- [PR 初审检查清单](day7_pr_review_checklist.md)
-- [PR 初审报告模板](day7_pr_review_report_template.md)
-- [PR 初审风险矩阵](day7_pr_review_risk_matrix.md)
+- [PR 初审检查清单](service_kit/pr_review_checklist.md)
+- [PR 初审报告模板](service_kit/pr_review_report_template.md)
+- [PR 初审风险矩阵](service_kit/pr_review_risk_matrix.md)
 
 ## AI 使用边界
 
@@ -97,9 +97,9 @@ AI 只做辅助分析，不直接替代人工交付。
 
 对应文件：
 
-- [AI 分析提示词](day6_ai_analysis_prompt.md)
-- [AI 输出复核清单](day6_ai_output_review_checklist.md)
-- [客户交付格式](day6_client_delivery_format.md)
+- [AI 分析提示词](service_kit/ai_analysis_prompt.md)
+- [AI 输出复核清单](service_kit/ai_output_review_checklist.md)
+- [客户交付格式](service_kit/client_delivery_format.md)
 
 ## GitHub 仓库建议结构
 

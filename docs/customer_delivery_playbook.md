@@ -14,7 +14,7 @@
 
 使用：
 
-- `day1_customer_intake.md`
+- `service_kit/customer_intake.md`
 - GitHub issue 模板 `repo-audit.md`
 - GitHub issue 模板 `ci-red-diagnosis.md`
 
@@ -58,9 +58,9 @@
 
 使用：
 
-- `day3_repo_audit_checklist.md`
-- `day3_repo_audit_report_template.md`
-- `day3_risk_level_standard.md`
+- `service_kit/repo_audit_checklist.md`
+- `service_kit/repo_audit_report_template.md`
+- `service_kit/risk_level_standard.md`
 
 输出：
 
@@ -73,10 +73,10 @@
 
 使用：
 
-- `day4_ci_red_checklist.md`
-- `day4_ci_red_report_template.md`
-- `day4_ci_log_extraction_rules.md`
-- `day4_ci_red_risk_matrix.md`
+- `service_kit/ci_red_checklist.md`
+- `service_kit/ci_red_report_template.md`
+- `service_kit/ci_log_extraction_rules.md`
+- `service_kit/ci_red_risk_matrix.md`
 
 输出：
 
@@ -94,8 +94,8 @@
 - `workflow_templates/node-minimal-ci.yml`
 - `workflow_templates/python-minimal-ci.yml`
 - `workflow_templates/artifact-on-failure-snippet.yml`
-- `day5_customer_workflow_install_guide.md`
-- `day5_workflow_debug_checklist.md`
+- `service_kit/customer_workflow_install_guide.md`
+- `service_kit/workflow_debug_checklist.md`
 
 交付：
 
@@ -108,9 +108,9 @@
 
 使用：
 
-- `day6_ai_analysis_prompt.md`
-- `day6_ai_output_review_checklist.md`
-- `day6_client_delivery_format.md`
+- `service_kit/ai_analysis_prompt.md`
+- `service_kit/ai_output_review_checklist.md`
+- `service_kit/client_delivery_format.md`
 
 必须复核：
 
