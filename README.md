@@ -194,3 +194,8 @@ cd D:\赛道研究\pr-ci-mvp
 ```
 
 建议后续把 `C:\Program Files\Git\cmd` 加入 Windows PATH，这样就可以直接使用 `git`。
+## 棣栧崟鍚姩
+
+- [棣栧崟鎵ц娓呭崟](service_kit/first_order_execution_checklist.md)
+- [瀹為檯鎶ヤ环璇濇湳](service_kit/pricing_conversation_script.md)
+- [GitHub 浠撳簱棣栭〉鏈€缁堟枃妗](service_kit/github_homepage_final_copy.md)
