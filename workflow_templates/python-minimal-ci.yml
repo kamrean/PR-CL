@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   ci:
-    name: Install and test
+    name: Install and run minimal Python checks
     runs-on: ubuntu-latest
 
     steps:
@@ -35,14 +35,6 @@ jobs:
       - name: Run tests
         run: pytest
 
-      - name: Upload safe pytest cache on failure
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: pytest-debug-files
-          path: |
-            .pytest_cache
-            pytest.xml
-            junit.xml
-          if-no-files-found: ignore
-          retention-days: 3
+      # Intentionally no default artifact upload here.
+      # If the repository owner explicitly approves low-risk debug uploads,
+      # use workflow_templates/artifact-on-failure-snippet.yml.

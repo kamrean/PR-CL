@@ -2,8 +2,18 @@ param(
   [Parameter(Mandatory = $true)][string]$Repo,
   [Parameter(Mandatory = $true)][string]$PrTitle,
   [Parameter(Mandatory = $true)][string]$PrUrl,
-  [Parameter(Mandatory = $true)][string]$OutputPath
+  [Parameter(Mandatory = $true)][string]$OutputPath,
+  [switch]$Force
 )
+
+if ((Test-Path -LiteralPath $OutputPath) -and -not $Force) {
+  throw "OutputPath already exists. Use -Force to overwrite: $OutputPath"
+}
+
+$parent = Split-Path -Parent $OutputPath
+if ($parent -and -not (Test-Path -LiteralPath $parent)) {
+  New-Item -ItemType Directory -Path $parent -Force | Out-Null
+}
 
 $content = @"
 # PR 初审报告

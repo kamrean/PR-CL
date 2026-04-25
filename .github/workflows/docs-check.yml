@@ -40,7 +40,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if find . -type f \( -name ".env" -o -name "*.pem" -o -name "*.key" -o -name "*.p12" -o -name "*.pfx" \) | grep .; then
+          if find . -type f \
+            \( -name ".env" -o -name ".env.*" -o -name "*.pem" -o -name "*.key" -o -name "*.p12" -o -name "*.pfx" \) \
+            ! \( -name ".env.example" -o -name ".env.sample" -o -name ".env.template" -o -name ".env.test.example" \) | grep .; then
             echo "Potential secret files found. Remove or rename before commit."
             exit 1
           fi

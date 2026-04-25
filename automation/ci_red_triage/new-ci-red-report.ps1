@@ -4,8 +4,18 @@ param(
   [Parameter(Mandatory = $true)][string]$Workflow,
   [Parameter(Mandatory = $true)][string]$Job,
   [Parameter(Mandatory = $true)][string]$Step,
-  [Parameter(Mandatory = $true)][string]$OutputPath
+  [Parameter(Mandatory = $true)][string]$OutputPath,
+  [switch]$Force
 )
+
+if ((Test-Path -LiteralPath $OutputPath) -and -not $Force) {
+  throw "OutputPath already exists. Use -Force to overwrite: $OutputPath"
+}
+
+$parent = Split-Path -Parent $OutputPath
+if ($parent -and -not (Test-Path -LiteralPath $parent)) {
+  New-Item -ItemType Directory -Path $parent -Force | Out-Null
+}
 
 $content = @"
 # CI 红灯诊断报告

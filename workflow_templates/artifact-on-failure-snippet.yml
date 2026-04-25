@@ -1,8 +1,12 @@
-# Add this step near the end of a GitHub Actions job.
-# Keep artifact uploads small and low risk by default.
+# Add this step only after the repository owner confirms:
+# 1. the uploaded files are on the allowlist
+# 2. they do not contain secrets, screenshots, traces, or customer data
+# 3. short retention is acceptable
+#
+# This snippet is opt-in by design. Do not enable it by default in public starter templates.
 
 - name: Upload safe debug artifacts on failure
-  if: failure()
+  if: failure() && vars.ENABLE_DEBUG_ARTIFACT_UPLOAD == 'true'
   uses: actions/upload-artifact@v4
   with:
     name: ci-debug-artifacts
