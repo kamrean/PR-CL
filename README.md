@@ -49,7 +49,7 @@
 3. [服务套餐与定价](service_kit/service_packages.md)
 4. [客户 FAQ](service_kit/client_faq.md)
 5. [完整 demo 闭环](service_kit/full_demo_case_walkthrough.md)
-6. [15 天成果总览](service_kit/fifteen_day_summary.md)
+6. [能力总览](service_kit/fifteen_day_summary.md)
 7. [上线前总检查](service_kit/release_readiness_checklist.md)
 8. [首单执行清单](service_kit/first_order_execution_checklist.md)
 
