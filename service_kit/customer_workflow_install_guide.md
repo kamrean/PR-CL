@@ -17,9 +17,9 @@
 第一版只追求：
 
 1. 自动安装依赖
-2. 自动跑 test、lint 或 build
+2. 自动跑最小核心检查
 3. 失败时能快速定位问题
-4. 不默认上传高风险 artifact
+4. 不默认自动上传调试 artifact
 
 ## 客户需要提供
 
@@ -41,6 +41,7 @@
 - 默认不用 `pull_request_target`
 - 默认只在 PR 和 push 上跑基础检查
 - 默认不上传大而全的 artifact
+- 默认不启用自动 artifact 上传
 - 建议启用 branch protection 和 required checks
 
 详细规则见：
@@ -51,11 +52,18 @@
 ## Node 项目落地步骤
 
 1. 确认根目录有 `package.json`
-2. 确认 `scripts` 是否包含 `test`、`lint`、`build`
+2. 确认 `scripts` 里有哪些可运行检查
 3. 选择 `workflow_templates/node-minimal-ci.yml`
 4. 按客户实际版本调整 Node 版本
 5. 放入 `.github/workflows/ci.yml`
 6. 用测试 PR 验证
+
+Node 最小模板的实际逻辑：
+
+- `lint` 存在就跑
+- `test` 存在就跑
+- `build` 存在就跑
+- 某个脚本不存在时不会强行失败
 
 ## Python 项目落地步骤
 
@@ -65,6 +73,14 @@
 4. 按客户实际版本调整 Python 版本
 5. 放入 `.github/workflows/ci.yml`
 6. 用测试 PR 验证
+
+Python 最小模板的实际逻辑：
+
+- 默认安装依赖
+- 默认确保 `pytest` 可运行
+- 默认执行 `pytest`
+- 不默认假设存在统一的 `lint` 或 `build` 命令
+- 如需 `ruff`、`flake8`、`mypy` 或打包流程，应按仓库实际情况追加
 
 ## Secrets 处理原则
 

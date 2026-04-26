@@ -50,7 +50,7 @@
 2. [服务套餐与定价](service_kit/service_packages.md)
 3. [客户 FAQ](service_kit/client_faq.md)
 4. [完整 demo 闭环](service_kit/full_demo_case_walkthrough.md)
-5. [15 天成果总览](service_kit/fifteen_day_summary.md)
+5. [能力总览](service_kit/fifteen_day_summary.md)
 6. [上线前总检查](service_kit/release_readiness_checklist.md)
 ```
 

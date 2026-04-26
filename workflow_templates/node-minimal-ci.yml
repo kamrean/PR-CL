@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   ci:
-    name: Install, lint, test, and build
+    name: Install and run configured checks
     runs-on: ubuntu-latest
 
     steps:
@@ -35,11 +35,6 @@ jobs:
       - name: Run build
         run: npm run build --if-present
 
-      - name: Upload safe npm logs on failure
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: npm-debug-logs
-          path: ~/.npm/_logs
-          if-no-files-found: ignore
-          retention-days: 3
+      # Intentionally no default artifact upload here.
+      # If the repository owner explicitly approves low-risk debug uploads,
+      # use workflow_templates/artifact-on-failure-snippet.yml.

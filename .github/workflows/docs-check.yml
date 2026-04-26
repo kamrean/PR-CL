@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Verify required files exist
         shell: bash
@@ -40,7 +40,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if find . -type f \( -name ".env" -o -name "*.pem" -o -name "*.key" -o -name "*.p12" -o -name "*.pfx" \) | grep .; then
+          if find . -type f \
+            \( -name ".env" -o -name ".env.*" -o -name "*.pem" -o -name "*.key" -o -name "*.p12" -o -name "*.pfx" \) \
+            ! \( -name ".env.example" -o -name ".env.sample" -o -name ".env.template" -o -name ".env.test.example" \) | grep .; then
             echo "Potential secret files found. Remove or rename before commit."
             exit 1
           fi
