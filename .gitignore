@@ -40,8 +40,22 @@ venv/
 test-results/
 playwright-report/
 ci-debug-artifacts/
+artifacts-private/
+tmp/
+temp/
+scratch/
+exports/
+drafts/
+*.tmp
+*.bak
+*.orig
 
 # Customer private materials
 customer_private/
 client_logs_raw/
 client_secrets/
+private_samples/
+private_screenshots/
+customer_exports/
+raw_screenshots/
+redaction_workbench/

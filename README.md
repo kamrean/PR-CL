@@ -1,34 +1,29 @@
 # PR/CI Red Light Clinic
 
-面向学生项目、独立开发者、小外包团队和小 SaaS 团队的轻量工程化服务工具包。
+面向学生项目、独立开发者、小外包团队和小型 SaaS 团队的轻量工程化服务工具包。
 
 这套仓库解决的是：
+- 仓库接手困难，文档和流程不完整
+- GitHub Actions 经常红灯，但没人愿意读长日志
+- PR 改动不大却难以快速判断风险
+- 团队想做基础自动化，但不想一开始就上复杂平台
 
-- 仓库接手困难
-- CI 经常红灯但没人愿意看长日志
-- PR 改动不大但 reviewer 很难快速判断风险
-- GitHub Actions 没配好，问题总是很晚才暴露
-
-我们卖的不是账号，也不是“全自动修一切”的承诺。
-我们卖的是可交付结果：
-
+我们卖的不是账号，也不是“全自动帮你修一切”的承诺。我们卖的是可交付结果：
 1. 仓库体检
 2. CI 红灯诊断
 3. PR 初审
 4. GitHub Actions 基础落地
-5. 后续试点、转付费与月度托管流程
+5. 后续试点、转付费与月度托管
 
 ## 当前默认支持范围
 
 这套 MVP 当前主支持：
-
 - GitHub
 - GitHub Actions
 - Node 项目
 - Python 项目
 
-以下内容默认按单评估，不作为标准承诺：
-
+以下内容默认按单次评估处理，不作为标准承诺：
 - GitLab CI
 - Jenkins
 - CircleCI
@@ -37,13 +32,11 @@
 - 生产部署
 
 详细范围见：
-
 - [服务范围矩阵](service_kit/service_scope_matrix.md)
 
 ## 先看这里
 
 第一次打开这个仓库，建议先看这 8 份材料：
-
 1. [服务介绍](service_kit/one_page_service.md)
 2. [服务边界](service_kit/service_boundary.md)
 3. [服务套餐与定价](service_kit/service_packages.md)
@@ -56,7 +49,6 @@
 ## 如何开始合作
 
 最简单的开始方式只有两种：
-
 1. 发一个仓库链接，先做仓库体检
 2. 发一段脱敏后的 GitHub Actions 错误摘要，先做单次诊断
 
@@ -67,26 +59,36 @@
 公开仓库不是客户私有资料的默认入口。
 
 如果涉及以下内容，请先转私下渠道：
-
 - 私有仓库
 - 私有 PR
 - 原始 CI 日志
-- 截图
+- 原始截图
 - workflow 文件
 - 任何未确认完成脱敏的材料
 
 对应材料：
-
 - [私有资料接单政策](service_kit/private_intake_policy.md)
 - [客户信息收集表](service_kit/customer_intake.md)
 - [私有仓库访问授权模板](service_kit/private_repo_access_authorization.md)
+
+## 公开发布注意事项
+
+这个仓库默认按公开仓库维护，不应该存放任何客户私有样例、原始截图、原始日志、临时导出物或未确认脱敏的调试输出。
+
+提交前至少确认：
+- 不提交 `.env`、证书、密钥、原始 token 配置
+- 不提交客户仓库导出的源码、补丁包、压缩包或数据库片段
+- 不提交原始 CI 日志、原始报错截图、trace、录屏和 artifact 调试包
+- 不提交仅供本地试验的临时输出、草稿、工作台目录和手工脱敏中间文件
+- 任何需要公开展示的案例，先做脱敏，再走案例授权模板
+
+当前 `.gitignore` 已默认忽略常见的私有样例、截图目录和临时输出目录，但它不是最终保险。真正对外 push 前，仍然要人工复核一次变更列表。
 
 ## 服务包
 
 ### 1. 仓库体检
 
 固定检查项：
-
 - README
 - 依赖安装
 - 测试命令
@@ -96,7 +98,6 @@
 - 分支保护
 
 对应材料：
-
 - [仓库体检检查清单](service_kit/repo_audit_checklist.md)
 - [仓库体检报告模板](service_kit/repo_audit_report_template.md)
 - [风险分级标准](service_kit/risk_level_standard.md)
@@ -104,7 +105,6 @@
 ### 2. CI 红灯诊断
 
 固定输出：
-
 - 失败步骤
 - 关键日志
 - 根因判断
@@ -113,7 +113,6 @@
 - 风险等级
 
 对应材料：
-
 - [CI 红灯诊断检查清单](service_kit/ci_red_checklist.md)
 - [CI 红灯诊断报告模板](service_kit/ci_red_report_template.md)
 - [CI 日志提取规则](service_kit/ci_log_extraction_rules.md)
@@ -122,7 +121,6 @@
 ### 3. PR 初审
 
 固定输出：
-
 - 本次改动摘要
 - 潜在 bug
 - 缺失测试
@@ -132,7 +130,6 @@
 - 是否建议合并
 
 对应材料：
-
 - [PR 初审检查清单](service_kit/pr_review_checklist.md)
 - [PR 初审报告模板](service_kit/pr_review_report_template.md)
 - [PR 初审风险矩阵](service_kit/pr_review_risk_matrix.md)
@@ -140,7 +137,6 @@
 ### 4. GitHub Actions 基础落地
 
 当前包含：
-
 - Node 最小 CI workflow
 - Python 最小 CI workflow
 - 失败时 artifact 上传片段
@@ -148,16 +144,14 @@
 - workflow 调试清单
 
 对应材料：
-
 - [workflow_templates](workflow_templates)
 - [客户 GitHub Actions 落地说明](service_kit/customer_workflow_install_guide.md)
 - [GitHub Actions 安全基线](service_kit/github_actions_security_baseline.md)
-- [Artifact 白名单与脱敏政策](service_kit/artifact_allowlist_and_redaction_policy.md)
+- [Artifact 白名单与脱敏策略](service_kit/artifact_allowlist_and_redaction_policy.md)
 
 ## 最小执行层
 
 这套仓库不再只是文档，也补了两份最小可执行脚本，用来生成标准化报告骨架：
-
 - [automation/README.md](automation/README.md)
 - [CI 红灯报告骨架脚本](automation/ci_red_triage/new-ci-red-report.ps1)
 - [PR 初审报告骨架脚本](automation/pr_review/new-pr-review-report.ps1)
@@ -170,7 +164,6 @@
 AI 只做辅助分析，不直接替代人工交付。
 
 必须人工复核：
-
 - CI 根因判断
 - 修复建议
 - PR review 建议
@@ -178,8 +171,7 @@ AI 只做辅助分析，不直接替代人工交付。
 - 登录、支付、权限、数据库、生产部署等高风险内容
 
 对应材料：
-
-- [AI 分析提示词](service_kit/ai_analysis_prompt.md)
+- [AI 辅助分析标准提示词](service_kit/ai_analysis_prompt.md)
 - [AI 分析 SOP](service_kit/ai_analysis_sop.md)
 - [AI 数据处理与客户同意](service_kit/ai_data_handling_and_customer_consent.md)
 - [AI 输出复核清单](service_kit/ai_output_review_checklist.md)
@@ -187,7 +179,6 @@ AI 只做辅助分析，不直接替代人工交付。
 ## 交付怎么做
 
 交付不是“几句建议”，而是一套标准包：
-
 - [客户交付 Playbook](docs/customer_delivery_playbook.md)
 - [交付包规范](service_kit/delivery_pack_spec.md)
 - [修复与验证闭环手册](service_kit/fix_and_verify_playbook.md)
@@ -203,6 +194,24 @@ AI 只做辅助分析，不直接替代人工交付。
 - [试点转付费 SOP](service_kit/pilot_to_paid_conversion_sop.md)
 - [试点运营指标看板](service_kit/ops_metrics_dashboard.md)
 - [案例展示页](service_kit/case_showcase_page.md)
+
+## 当前远端安全状态
+
+这个仓库的 GitHub 远端当前已经启用这些保护：
+- `main` 已开启 branch protection
+- `main` 禁止直接 push
+- 合并必须通过 PR
+- PR 至少需要 1 个 review
+- `Check required service-kit files` 已设为 required status check
+- 必须解决对话后才能合并
+- GitHub Actions 默认权限为 `read`
+- 允许的 actions 已从 `all` 收紧为“仅 GitHub-owned actions”
+- Secret scanning 和 push protection 已开启
+- Dependabot security updates 已开启
+
+当前仍保留的谨慎项：
+- `sha_pinning_required` 还没有开启；本地仓库已经把 `docs-check` 改成固定 SHA，等下一次 push 完成后就可以继续开启
+- `secret_scanning_non_provider_patterns` 和 `secret_scanning_validity_checks` 目前仍是 GitHub 返回的 disabled 状态
 
 ## 仓库结构
 
