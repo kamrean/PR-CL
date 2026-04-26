@@ -201,7 +201,7 @@ AI 只做辅助分析，不直接替代人工交付。
 - `main` 已开启 branch protection
 - `main` 禁止直接 push
 - 合并必须通过 PR
-- PR 至少需要 1 个 review
+- 当前按单人仓库模式运行，不强制额外 approving review
 - `Check required service-kit files` 已设为 required status check
 - 必须解决对话后才能合并
 - GitHub Actions 默认权限为 `read`
@@ -210,7 +210,7 @@ AI 只做辅助分析，不直接替代人工交付。
 - Dependabot security updates 已开启
 
 当前仍保留的谨慎项：
-- `sha_pinning_required` 还没有开启；本地仓库已经把 `docs-check` 改成固定 SHA，等下一次 push 完成后就可以继续开启
+- `sha_pinning_required` 已规划启用；开启后所有新增或修改的 workflow 都应默认使用 SHA pin
 - `secret_scanning_non_provider_patterns` 和 `secret_scanning_validity_checks` 目前仍是 GitHub 返回的 disabled 状态
 
 ## 仓库结构
